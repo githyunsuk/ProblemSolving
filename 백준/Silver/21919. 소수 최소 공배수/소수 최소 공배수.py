@@ -4,21 +4,20 @@ def gcd(a, b):
     else:
         return gcd(b, a%b)
 
-arr = [0] * 1000001
-for i in range(2, int(len(arr)**0.5)+1):
-    for j in range(i+i, len(arr), i):
-        if arr[j] == 0:
-            arr[j] = 1
-arr[0] = 1
-arr[1] = 1
+prime = [True] * 1000001
+prime[0] = prime[1] = False
 
+for i in range(2, int(len(prime) ** 0.5) + 1):
+    for j in range(i+i, len(prime), i):
+        if prime[j]:
+            prime[j] = False
 
 result = 1
 N = int(input())
 A = list(map(int, input().split()))
 temp = []
 for i in A:
-    if not arr[i]:
+    if prime[i]:
         temp.append(i)
 
 if not temp:
