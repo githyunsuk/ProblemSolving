@@ -4,24 +4,8 @@ input = sys.stdin.readline
 N = int(input())
 word = input().rstrip()
 
-cnt1 = 1
-group = False
-for i in word:
-    if i == 'B':
-        if not group:
-            cnt1 += 1
-            group = True
-    else:
-        group = False
+rWord = [i for i in word.split('B') if i]
+bWord = [i for i in word.split('R') if i]
 
-cnt2 = 1
-group = False
-for j in word:
-    if j == 'R':
-        if not group:
-            cnt2 += 1
-            group = True
-    else:
-        group = False
-
-print(min(cnt1, cnt2))
+result = min(len(rWord), len(bWord))
+print(result + 1) 
