@@ -1,11 +1,9 @@
-n = int(input())
+N = int(input())
 
-for i in range(1, n+1):
-  num = sum(map(int, str(i)))
-  result = i + num
-
-  if result == n:
-    print(i)
-    break
+for i in range(1, N):
+    num = sum(map(int, str(i)))
+    if num + i == N:
+        print(i)
+        break
 else:
-  print(0)
+    print(0)
