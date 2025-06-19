@@ -1,10 +1,8 @@
-def solution(word, n):
-    result = ''
-    for w in word:
-        if w == ' ':
-            result += ' '
-        elif 'a' <= w <= 'z':
-            result += chr((ord(w) - ord('a') + n) % 26 + ord('a'))
-        elif 'A' <= w <= 'Z':
-            result += chr((ord(w) - ord('A') + n) % 26 + ord('A'))
-    return result
+def solution(s, n):
+    s = list(s)
+    for i in range(len(s)):
+        if s[i].isupper():
+            s[i] = chr((ord(s[i]) - ord('A') + n) % 26 + ord('A'))
+        elif s[i].islower():
+            s[i] = chr((ord(s[i]) - ord('a') + n) % 26 + ord('a'))
+    return ''.join(s)
