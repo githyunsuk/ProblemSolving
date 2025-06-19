@@ -1,9 +1,10 @@
 def solution(s):
-    arr = [-1] * len(s)
-    for i in range(1, len(s)):
-        for j in range(i-1, -1, -1):
-            if s[i] == s[j]:
-                arr[i] = i - j
-                break
+    arr = []
+    dic = dict()
+    for i in range(len(s)):
+        if s[i] not in dic:
+            arr.append(-1)
+        else:
+            arr.append(i-dic[s[i]])
+        dic[s[i]] = i
     return arr
-            
