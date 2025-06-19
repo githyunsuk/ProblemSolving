@@ -1,10 +1,7 @@
+
 def solution(a, b, n):
-    result = 0  
-    empty = n   
-    
-    while empty >= a:
-        new = (empty // a) * b  
-        result += new
-        empty = (empty % a) + new 
-    
-    return result
+    answer = 0
+    while n >= a:
+        answer += (n // a) * b
+        n = (n // a) * b + (n % a)
+    return answer
