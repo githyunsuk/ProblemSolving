@@ -1,27 +1,26 @@
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class Main
-{
-	public static void main(String[] args)
-	{
-		Scanner scanner = new Scanner(System.in);
+public class Main {
+	
+	public static void main(String[] args) throws IOException {
 		
-		int[] array = new int[9];
-		for(int i=0; i<9; i++)
-			array[i] = scanner.nextInt();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int max = 0;
-		int index = 0;
+		int num = -1;
 		
-		for(int i=0; i<9; i++)
-		{
-			if(array[i] > max)
-			{
-				max = array[i];
-				index = i+1;
+		for(int i=0; i<9; i++) {
+			int n = Integer.parseInt(br.readLine());
+			
+			if(n > max) {
+				max = n;
+				num = i+1;
 			}
 		}
 		
-		System.out.println(max + "\n" + index);
+		System.out.println(max);
+		System.out.println(num);
 	}
 }
