@@ -14,7 +14,7 @@ public class Main {
 			arr[num.charAt(i) - '0']++;
 		}
 		
-		int temp = (int) Math.ceil((arr[6] + arr[9]) / 2.0);
+		int temp = (arr[6] + arr[9] + 1) / 2;
 		arr[6] = temp;
 		arr[9] = temp;
 		
