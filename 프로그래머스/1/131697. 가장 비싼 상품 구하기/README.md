@@ -1,6 +1,6 @@
 # [level 1] 가장 비싼 상품 구하기 - 131697 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131697?language=oracle) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131697) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@ Empty
 
 ### 제출 일자
 
-2025년 06월 08일 23:44:52
+2025년 12월 20일 14:40:08
 
 ### 문제 설명
 
