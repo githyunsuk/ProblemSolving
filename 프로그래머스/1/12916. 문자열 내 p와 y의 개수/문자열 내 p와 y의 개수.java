@@ -2,19 +2,13 @@ class Solution {
     boolean solution(String s) {
         
         s = s.toLowerCase();
+        int count = 0;
         
-        int p = 0;
-        int y = 0; 
-        
-        char[] list = s.toCharArray();
-        for(char c : list) {
-            if (c == 'p') p += 1;
-            if (c == 'y') y += 1;
+        for(int i=0; i<s.length(); i++) {
+            if (s.charAt(i) == 'p') count++;
+            else if(s.charAt(i) == 'y') count--;
         }
         
-        return p == y ? true : false;
-
-        
-
+        return count == 0 ? true : false;
     }
 }
