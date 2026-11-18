@@ -1,6 +1,6 @@
--- 코드를 입력하세요
-SELECT B.TITLE, B.BOARD_ID, R.REPLY_ID, R.WRITER_ID, R.CONTENTS, TO_CHAR(R.CREATED_DATE, 'YYYY-MM-DD') CREATED_DATE
-from USED_GOODS_BOARD B 
-inner join USED_GOODS_REPLY R on B.BOARD_ID = R.BOARD_ID
-where TO_CHAR(B.CREATED_DATE, 'YYYY-MM-DD') LIKE '2022-10-%'
-order by CREATED_DATE asc, TITLE asc;
+SELECT ugb.title, ugb.board_id, ugr.reply_id, ugr.writer_id, ugr.contents, ugr.created_date
+FROM used_goods_board ugb
+JOIN used_goods_reply ugr
+  ON ugb.board_id = ugr.board_id
+WHERE ugb.created_date between '2022-10-01' and '2022-10-31'
+ORDER BY ugr.created_date, ugb.title
